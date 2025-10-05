@@ -14,7 +14,7 @@ Future<void> launchInNewTab(String url) async {
 }
 
 Future<void> openWhatsAppConfirmation() async {
-  final phone = '526565325635'; // 🇲🇽 México +52 sin espacios
+  final phone = '528341662843'; // 🇲🇽 México +52 sin espacios
   final message = Uri.encodeComponent('¡Hola! Quiero confirmar mi asistencia');
   final url = 'https://wa.me/$phone?text=$message';
 

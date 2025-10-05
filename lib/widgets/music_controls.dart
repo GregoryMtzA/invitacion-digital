@@ -3,8 +3,13 @@ import 'package:audioplayers/audioplayers.dart';
 
 class MusicControls extends StatefulWidget {
   final String music;
+  final double? size;
 
-  const MusicControls({super.key, required this.music});
+  const MusicControls({
+    super.key,
+    required this.music,
+    this.size
+  });
 
   @override
   State<MusicControls> createState() => _MusicControlsState();
@@ -76,6 +81,7 @@ class _MusicControlsState extends State<MusicControls> {
           onPressed: _togglePlayStop,
           icon: Icon(
             _isPlaying ? Icons.stop_outlined : Icons.play_arrow_outlined,
+            size: widget.size,
             color: Colors.pinkAccent,
           ),
         ),
@@ -85,6 +91,7 @@ class _MusicControlsState extends State<MusicControls> {
           onPressed: _isPlaying ? _pauseOrResume : null,
           icon: Icon(
             _isPaused ? Icons.play_circle_outline : Icons.pause_outlined,
+            size: widget.size,
             color: _isPlaying ? Colors.black : Colors.grey,
           ),
         ),

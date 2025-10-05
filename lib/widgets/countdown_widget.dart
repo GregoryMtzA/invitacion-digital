@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:ui' show FontFeature;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:invitacion_web/widgets/golden_text_widget.dart';
 
 class Countdown extends StatefulWidget {
   final DateTime target;
@@ -89,7 +90,11 @@ class _CountdownState extends State<Countdown> {
 
     Widget numBox(String t) => SizedBox(
       width: itemW,
-      child: Center(child: Text(t, style: digitsStyle, textAlign: TextAlign.center)),
+      child: Center(child: Text(
+        t,
+        style: digitsStyle,
+        textAlign: TextAlign.center
+      )),
     );
 
     Widget labelBox(String t) => SizedBox(

@@ -17,6 +17,14 @@ class InvStyles {
 
 }
 
+class InvStylesDesktop {
+
+  static TextStyle title = GoogleFonts.dancingScript(fontSize: 70, color: AppColors.onSurfaceGold, fontWeight: FontWeight.bold);
+  static TextStyle subtitle = GoogleFonts.allura(fontSize: 60, color: AppColors.onSurfaceLight,);
+  static TextStyle text = GoogleFonts.playfairDisplay(fontSize: 30, color: AppColors.onSurfaceLight);
+
+}
+
 class Invitation1 extends StatefulWidget {
 
   String name;
@@ -64,6 +72,7 @@ class _Invitation1State extends State<Invitation1> {
 
     return SingleChildScrollView(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           //! Header
           Stack(
@@ -121,7 +130,120 @@ class _Invitation1State extends State<Invitation1> {
               ),
             ],
           ),
-          //! Contador Regresivo
+          //! Musica y Texto
+          Stack(
+            alignment: Alignment.center,
+            children: [
+              // Musica y texto
+              Column(
+                children: [
+                  const SizedBox(height: 40,),
+                  DesktopContainer(
+                      child: Padding(
+                        padding: const EdgeInsets.all(20),
+                        child: Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            spacing: 20,
+                            children: [
+                              Text(
+                                "Dale play a mi canción favorita",
+                                textAlign: TextAlign.center,
+                                style: InvStylesDesktop.title,
+                              ),
+                              Container(
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    border: BoxBorder.all(color: AppColors.rosaPastel, width: 2)
+                                ),
+                                child: MusicControls(
+                                  music: "song.mp3",
+                                  size: 50,
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      )
+                  ),
+                  const SizedBox(height: 20,),
+                  DesktopContainer(
+                      child: Center(
+                        child: Stack(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(32),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                spacing: 20,
+                                children: [
+                                  Text(
+                                    "Hay eventos en la vida que son muy especiales por si solos, pero poder compartirlos con quienes más quiero, los convierte en momentos únicos e inolvidables.",
+                                    maxLines: 6,
+                                    textAlign: TextAlign.center,
+                                    style: InvStylesDesktop.text,
+                                  ),
+                                  Text(
+                                    maxLines: 1,
+                                    "¡Te esperamos en mi fiesta!",
+                                    textAlign: TextAlign.center,
+                                    style: InvStylesDesktop.text,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Positioned(
+                              top: 0,
+                              left: 0,
+                              child: Image.asset(AppAssets.vintageCornerBorder, height: 80,),
+                            ),
+                            Positioned(
+                              bottom: 0,
+                              left: 0,
+                              child: RotatedBox(
+                                quarterTurns: 3,
+                                child: Image.asset(AppAssets.vintageCornerBorder, height: 80,),
+                              ),
+                            ),
+                            Positioned(
+                              top: 0,
+                              right: 0,
+                              child: RotatedBox(
+                                quarterTurns: 1,
+                                child: Image.asset(AppAssets.vintageCornerBorder, height: 80,),
+                              ),
+                            ),
+                            Positioned(
+                              bottom: 0,
+                              right: 0,
+                              child: RotatedBox(
+                                quarterTurns: 2,
+                                child: Image.asset(AppAssets.vintageCornerBorder, height: 80,),
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                  ),
+                  const SizedBox(height: 40,),
+                ],
+              ),
+              // Flores
+              Positioned(
+                top: -70,
+                left: -60,
+                child: Image.asset(AppAssets.rosas1, height: 300,),
+              ),
+              Positioned(
+                top: -70,
+                right: -60,
+                child: RotatedBox(
+                    quarterTurns: 1,
+                    child: Image.asset(AppAssets.rosas1, height: 300,)
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
@@ -293,7 +415,7 @@ class _Invitation1State extends State<Invitation1> {
                               Container(
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(8),
-                                    border: BoxBorder.all(color: AppColors.accent, width: 2)
+                                    border: BoxBorder.all(color: AppColors.rosaPastel, width: 2)
                                 ),
                                 child: MusicControls(music: "song.mp3"),
                               )
@@ -381,44 +503,52 @@ class _Invitation1State extends State<Invitation1> {
             ],
           ),
           //! Contador Regresivo
-          Stack(
-            alignment: Alignment.center,
-            children: [
-              //* Imagen
-              ColorFiltered(
-                colorFilter: ColorFilter.mode(
-                  Colors.black.withOpacity(0.4), // color del overlay
-                  BlendMode.srcATop,             // mezcla el color sobre la imagen
-                ),
-                child: Image.asset(
-                  AppAssets.portrait2,
-                  fit: BoxFit.cover,
-                ),
-              ),
-              MobileContainer(
-                border: false,
-                child: Center(
-                  child: Column(
-                    spacing: 40,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Tan solo faltán",
-                        style: InvStyles.title,
-                      ),
-                      Countdown(
-                        target: widget.fecha,
-                        style: GoogleFonts.playfairDisplay(fontSize: 32, color: Colors.white),
-                      ),
-                      Text(
-                        "Para este día tan especial",
-                        style: GoogleFonts.dancingScript(fontSize: 32, color: Colors.white),
-                      ),
-                    ],
+          SizedBox(
+            height: 800,
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                //* Imagen
+                Positioned.fill(
+                  child: ColorFiltered(
+                    colorFilter: ColorFilter.mode(
+                      Colors.black.withOpacity(0.4), // color del overlay
+                      BlendMode.srcATop,             // mezcla el color sobre la imagen
+                    ),
+                    child: Image.asset(
+                      AppAssets.landscape2CropVertical,
+                      fit: BoxFit.cover,
+                    ),
                   ),
+                ),
+                MobileContainer(
+                  border: false,
+                  child: Center(
+                    child: Column(
+                      spacing: 60,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Tan solo faltan",
+                          style: InvStyles.title.copyWith(color: AppColors.roseGold),
+                        ),
+                        Countdown(
+                          target: widget.fecha,
+                          style: GoogleFonts.playfairDisplay(
+                            fontSize: 32,
+                            color: Colors.white,
+                          )
+                        ),
+                        Text(
+                          "Para este día tan especial",
+                          style: GoogleFonts.dancingScript(fontSize: 32, color: AppColors.rosaPastel),
+                        ),
+                      ],
+                    ),
+                  )
                 )
-              )
-            ],
+              ],
+            ),
           ),
           //! Itinerario
           Stack(
@@ -456,7 +586,7 @@ class _Invitation1State extends State<Invitation1> {
                               Column(
                                 spacing: 5,
                                 children: [
-                                  Icon(Icons.church_outlined, color: AppColors.primary, size: 48,),
+                                  Icon(Icons.church_outlined, color: AppColors.rosaPastel, size: 48,),
                                   Text(
                                     "5:00 PM",
                                     style: InvStyles.text,
@@ -468,7 +598,7 @@ class _Invitation1State extends State<Invitation1> {
                                         padding: EdgeInsets.all(10),
                                         child: Text(
                                           "Ver ubicación",
-                                          style: InvStyles.text.copyWith(color: AppColors.secondary),
+                                          style: InvStyles.text.copyWith(color: AppColors.roseGold),
                                         )
                                     ),
                                   )
@@ -479,7 +609,7 @@ class _Invitation1State extends State<Invitation1> {
                               Column(
                                 spacing: 5,
                                 children: [
-                                  Icon(Icons.schedule, color: AppColors.primary, size: 48,),
+                                  Icon(Icons.schedule, color: AppColors.rosaPastel, size: 48,),
                                   Text(
                                     "6:30 PM",
                                     style: InvStyles.text,
@@ -491,7 +621,7 @@ class _Invitation1State extends State<Invitation1> {
                                         padding: EdgeInsets.all(10),
                                         child: Text(
                                           "Ver ubicación",
-                                          style: InvStyles.text.copyWith(color: AppColors.secondary),
+                                          style: InvStyles.text.copyWith(color: AppColors.roseGold),
                                         )
                                     ),
                                   )
@@ -577,7 +707,7 @@ class _Invitation1State extends State<Invitation1> {
                             const SizedBox(height: 10,),
                             Text(
                               "Prohibido el color rosa",
-                              style: InvStyles.text.copyWith(color: AppColors.primary),
+                              style: InvStyles.text.copyWith(color: AppColors.rosaPastel),
                               textAlign: TextAlign.center,
                             ),
                           ],
@@ -631,7 +761,7 @@ class _Invitation1State extends State<Invitation1> {
                       BlendMode.srcATop,
                     ),
                     child: Image.asset(
-                      AppAssets.portrait1,
+                      AppAssets.portrait2,
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -659,7 +789,7 @@ class _Invitation1State extends State<Invitation1> {
                           style: OutlinedButton.styleFrom(
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8),side: BorderSide(color: Colors.white)),
                             padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-                            foregroundColor: AppColors.primary
+                            foregroundColor: AppColors.rosaPastel
                           ),
                           child: Text("Confirmar")
                         ),
@@ -687,7 +817,7 @@ class _Invitation1State extends State<Invitation1> {
                 ],
                 height: 320,
                 autoPlay: true,
-                indicatorActiveColor: AppColors.primary,
+                indicatorActiveColor: AppColors.rosaPastel,
                 viewportFraction: 0.75,  // se ve parte del siguiente
                 radius: 20,
                 fit: BoxFit.cover,        // maneja vertical/horizontal
@@ -722,7 +852,7 @@ class _Invitation1State extends State<Invitation1> {
                 left: -25,
                 child: RotatedBox(
                   quarterTurns: 3,
-                  child: Image.asset(AppAssets.rosas1, height: 150,)
+                  child: Image.asset(AppAssets.rosas1, height: 125,)
                 ),
               ),
               Positioned(
@@ -730,7 +860,7 @@ class _Invitation1State extends State<Invitation1> {
                 right: -25,
                 child: RotatedBox(
                   quarterTurns: 2,
-                  child: Image.asset(AppAssets.rosas1, height: 150,)
+                  child: Image.asset(AppAssets.rosas1, height: 125,)
                 ),
               ),
             ],

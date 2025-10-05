@@ -10,6 +10,7 @@ class AppAssets {
   static String landscape3 = "$_base/landscape_3.jpg";
   static String portrait1 = "$_base/portrait_1.jpg";
   static String portrait2 = "$_base/portrait_2.jpg";
+  static String landscape2CropVertical = "$_base/landscape_2 crop_vert.jpg";
 
   static String rosas1 = "$_base/rosas_1.png";
   static String rosas2 = "$_base/rosas_2.png";
@@ -25,25 +26,15 @@ class AppColors {
 
   /// Texto y contraste
   static const onSurfaceLight = Color(0xFF1E1E1E); // Negro suave (para texto)
-  static const onSurfaceGold = Color(0xFFD4AF37); // Dorado clásico (para títulos o acentos elegantes)
+  static const onSurfaceGold = Color(0xFFefb810); // Dorado clásico (para títulos o acentos elegantes)
 
   /// Colores principales
-  static const primary = Color(0xFFE9AFAF); // Rosa pastel suave
-  static const primaryVariant = Color(0xFFE4B1AB); // Rosa empolvado, más cálido
-
-  /// Secundarios (rose gold y complementarios)
-  static const secondary = Color(0xFFB76E79); // Rose Gold principal
-  static const secondaryVariant = Color(0xFFD8A7A7); // Tono intermedio para degradados
-
+  static const rosaPastel = Color(0xFFFADADD); // Beige rosado para divisores o sombras
+  static const roseGold = Color(0xFFB76E79); // Beige rosado para divisores o sombras
   /// Acentos (para botones o detalles sutiles)
-  static const accent = Color(0xFFF7CAC9); // Rosa perla
-  static const highlight = Color(0xFFFFE5B4); // Dorado pálido tipo champán
 
   /// Neutrales y bordes
   static const neutralLight = Color(0xFFF2E7E5); // Beige rosado para divisores o sombras
   static const neutralGrey = Color(0xFF9E9E9E); // Gris suave para textos secundarios
-
-  /// Sombra o relieve sutil
-  static const shadow = Color(0x22000000); // Transparente con sombra ligera
 }
 

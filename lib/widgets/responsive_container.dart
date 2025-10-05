@@ -64,30 +64,28 @@ class TabletContainer extends StatelessWidget {
 
 /// 🖥️ Contenedor para pantallas de escritorio
 class DesktopContainer extends StatelessWidget {
+  final bool border;
   final Widget child;
+  final EdgeInsetsGeometry? padding;
 
-  const DesktopContainer({super.key, required this.child});
+  const DesktopContainer({
+    super.key,
+    required this.child,
+    this.border = true,
+    this.padding
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(maxWidth: 1100),
-        child: Container(
-          padding: const EdgeInsets.all(32),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(24),
-            boxShadow: const [
-              BoxShadow(
-                color: Color(0x33000000),
-                blurRadius: 14,
-                offset: Offset(0, 8),
-              ),
-            ],
-          ),
-          child: child,
+    return ConstrainedBox(
+      constraints: const BoxConstraints(maxWidth: 1366),
+      child: Container(
+        padding: padding,
+        decoration: BoxDecoration(
+            borderRadius: border ? BorderRadius.circular(8) : null,
+            border: border ? BoxBorder.all(color: AppColors.neutralLight, width: 3) : null
         ),
+        child: child,
       ),
     );
   }
