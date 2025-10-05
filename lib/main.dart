@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: "XV – Dora",
       debugShowCheckedModeBanner: false,
       home: Invitation1(
         portada: AppAssets.landscape1Cropped,

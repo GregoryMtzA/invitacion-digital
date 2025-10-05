@@ -6,25 +6,26 @@ import '../core/consts.dart';
 class MobileContainer extends StatelessWidget {
   final bool border;
   final Widget child;
+  final EdgeInsetsGeometry? padding;
 
   const MobileContainer({
     super.key,
     required this.child,
     this.border = true,
+    this.padding
   });
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(maxWidth: 320),
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-              borderRadius: border ? BorderRadius.circular(8) : null,
-              border: border ? BoxBorder.all(color: AppColors.neutralLight, width: 3) : null
-          ),
-          child: child,
+    return ConstrainedBox(
+      constraints: const BoxConstraints(maxWidth: 320),
+      child: Container(
+        padding: padding,
+        decoration: BoxDecoration(
+            borderRadius: border ? BorderRadius.circular(8) : null,
+            border: border ? BoxBorder.all(color: AppColors.neutralLight, width: 3) : null
         ),
+        child: child,
       ),
     );
   }

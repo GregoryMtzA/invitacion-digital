@@ -14,6 +14,7 @@ class AppAssets {
   static String rosas1 = "$_base/rosas_1.png";
   static String rosas2 = "$_base/rosas_2.png";
   static String vintageCornerBorder = "$_base/vintage_corner_border.png";
+  static String dressCode = "$_base/dress_code.png";
 
 }
 
