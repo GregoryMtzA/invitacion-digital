@@ -292,7 +292,7 @@ class _Invitation1State extends State<Invitation1> {
                                     borderRadius: BorderRadius.circular(8),
                                     border: BoxBorder.all(color: AppColors.accent, width: 2)
                                 ),
-                                child: MusicControls(music: "assets/song.mp3"),
+                                child: MusicControls(music: "song.mp3"),
                               )
                             ],
                           ),

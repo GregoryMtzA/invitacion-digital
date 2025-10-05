@@ -23,7 +23,7 @@ class _MusicControlsState extends State<MusicControls> {
         _isPaused = false;
       });
     } else {
-      await _player.play(UrlSource(widget.music));
+      await _player.play(AssetSource(widget.music));
       setState(() {
         _isPlaying = true;
         _isPaused = false;
