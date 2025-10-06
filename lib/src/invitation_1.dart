@@ -178,9 +178,14 @@ class _Invitation1State extends State<Invitation1> {
                                 spacing: 20,
                                 children: [
                                   Text(
-                                    "Hay eventos en la vida que son muy especiales por si solos, pero poder compartirlos con quienes más quiero, los convierte en momentos únicos e inolvidables.",
+                                    "Hoy hace quince años mis pares daban gracias a Dios por mí. Hoy doy gracias a Dios por ellos, por cuidarme, tenerme paciencia y aconsejarme. Doy gracias también a toda mi familia por hacer más especial este día. A todos mis amigos por enseñarme el valor de una verdadera amistad. Gracias por acompañarme, que Dios los bendiga.",
                                     textAlign: TextAlign.center,
                                     style: InvStylesDesktop.text,
+                                  ),
+                                  Text(
+                                    "Mis padres Luis Gerardo Sánchez y Mirna Elena  De Leija Cruz",
+                                    textAlign: TextAlign.center,
+                                    style: InvStylesDesktop.text.copyWith(fontStyle: FontStyle.italic),
                                   ),
                                   Text(
                                     maxLines: 1,
@@ -435,9 +440,30 @@ class _Invitation1State extends State<Invitation1> {
                                 spacing: 20,
                                 children: [
                                   Text(
-                                    "Hay eventos en la vida que son muy especiales por si solos, pero poder compartirlos con quienes más quiero, los convierte en momentos únicos e inolvidables.",
+                                    "Hoy hace quince años mis pares daban gracias a Dios por mí. Hoy doy gracias a Dios por ellos, por cuidarme, tenerme paciencia y aconsejarme. Doy gracias también a toda mi familia por hacer más especial este día. A todos mis amigos por enseñarme el valor de una verdadera amistad. Gracias por acompañarme, que Dios los bendiga.",
                                     textAlign: TextAlign.justify,
-                                    style: GoogleFonts.playfairDisplay(fontSize: 18),
+                                    style: InvStyles.text,
+                                  ),
+                                  Text(
+                                    "Mis padres",
+                                    textAlign: TextAlign.center,
+                                    style: InvStyles.text
+                                  ),
+                                  RichText(
+                                    textAlign: TextAlign.center,
+                                    text: TextSpan(
+                                      text: "Luis Gerardo Sánchez",
+                                      style: InvStyles.title.copyWith(fontSize: 20, color: Colors.black),
+                                      children: [
+                                        TextSpan(
+                                          text: "\n y \n",
+                                          style: InvStyles.text
+                                        ),
+                                        TextSpan(
+                                          text: "Mirna Elena De Leija Cruz"
+                                        )
+                                      ]
+                                    )
                                   ),
                                   Text(
                                     maxLines: 1,
