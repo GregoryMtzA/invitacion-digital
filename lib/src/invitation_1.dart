@@ -905,7 +905,7 @@ class _Invitation1State extends State<Invitation1> {
             children: [
               const SizedBox(height: 40,),
               Text("Galería", style: InvStyles.title,),
-              Text("¡Mi sesión de fotos!", style: InvStyles.subtitle,),
+              // Text("¡Mi sesión de fotos!", style: InvStyles.subtitle,),
               const SizedBox(height: 20,),
               InfiniteAssetCarousel(
                 assets: [
