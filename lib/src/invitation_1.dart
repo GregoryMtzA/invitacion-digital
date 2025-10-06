@@ -588,6 +588,10 @@ class _Invitation1State extends State<Invitation1> {
                                 children: [
                                   Icon(Icons.church_outlined, color: AppColors.rosaPastel, size: 48,),
                                   Text(
+                                    "Misa",
+                                    style: InvStyles.text,
+                                  ),
+                                  Text(
                                     "5:00 PM",
                                     style: InvStyles.text,
                                   ),
@@ -609,7 +613,11 @@ class _Invitation1State extends State<Invitation1> {
                               Column(
                                 spacing: 5,
                                 children: [
-                                  Icon(Icons.schedule, color: AppColors.rosaPastel, size: 48,),
+                                  Icon(Icons.villa_outlined, color: AppColors.rosaPastel, size: 48,),
+                                  Text(
+                                    "Recepción",
+                                    style: InvStyles.text,
+                                  ),
                                   Text(
                                     "6:30 PM",
                                     style: InvStyles.text,
