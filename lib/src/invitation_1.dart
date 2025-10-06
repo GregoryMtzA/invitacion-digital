@@ -179,7 +179,6 @@ class _Invitation1State extends State<Invitation1> {
                                 children: [
                                   Text(
                                     "Hay eventos en la vida que son muy especiales por si solos, pero poder compartirlos con quienes más quiero, los convierte en momentos únicos e inolvidables.",
-                                    maxLines: 6,
                                     textAlign: TextAlign.center,
                                     style: InvStylesDesktop.text,
                                   ),
@@ -437,7 +436,6 @@ class _Invitation1State extends State<Invitation1> {
                                 children: [
                                   Text(
                                     "Hay eventos en la vida que son muy especiales por si solos, pero poder compartirlos con quienes más quiero, los convierte en momentos únicos e inolvidables.",
-                                    maxLines: 6,
                                     textAlign: TextAlign.justify,
                                     style: GoogleFonts.playfairDisplay(fontSize: 18),
                                   ),
@@ -715,9 +713,72 @@ class _Invitation1State extends State<Invitation1> {
                             const SizedBox(height: 10,),
                             Text(
                               "Prohibido el color rosa",
-                              style: InvStyles.text.copyWith(color: AppColors.rosaPastel),
+                              style: InvStyles.text.copyWith(color: AppColors.onSurfaceLight),
                               textAlign: TextAlign.center,
                             ),
+                          ],
+                        ),
+                      ),
+                      Positioned(
+                        top: 0,
+                        left: 0,
+                        child: Image.asset(AppAssets.vintageCornerBorder, height: 80,),
+                      ),
+                      Positioned(
+                        bottom: 0,
+                        left: 0,
+                        child: RotatedBox(
+                          quarterTurns: 3,
+                          child: Image.asset(AppAssets.vintageCornerBorder, height: 80,),
+                        ),
+                      ),
+                      Positioned(
+                        top: 0,
+                        right: 0,
+                        child: RotatedBox(
+                          quarterTurns: 1,
+                          child: Image.asset(AppAssets.vintageCornerBorder, height: 80,),
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 0,
+                        right: 0,
+                        child: RotatedBox(
+                          quarterTurns: 2,
+                          child: Image.asset(AppAssets.vintageCornerBorder, height: 80,),
+                        ),
+                      ),
+                    ],
+                  )
+              ),
+              const SizedBox(height: 20,),
+            ],
+          ),
+          //! Regalo
+          Column(
+            children: [
+              const SizedBox(height: 20,),
+              MobileContainer(
+                  child: Stack(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.all(20),
+                        child: Column(
+                          children: [
+                            Image.asset(AppAssets.gift, height: 120,),
+                            const SizedBox(height: 10,),
+                            Text(
+                              "Regalo",
+                              style: InvStyles.title,
+                              textAlign: TextAlign.center,
+                            ),
+                            const SizedBox(height: 10,),
+                            Text(
+                              "Mi mejor regalo en este día tan especial es tu presencia. Pero si deseas obsequiarme algo, podrás colocarlo en un sobre; habrá un cofre disponible en el salón.",
+                              style: InvStyles.text,
+                              textAlign: TextAlign.center,
+                            ),
+
                           ],
                         ),
                       ),
