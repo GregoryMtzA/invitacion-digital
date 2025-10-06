@@ -330,7 +330,7 @@ class _Invitation1State extends State<Invitation1> {
             children: [
               ColorFiltered(
                 colorFilter: ColorFilter.mode(
-                  Colors.black.withOpacity(0.4), // color del overlay
+                  Colors.black.withOpacity(0.5), // color del overlay
                   BlendMode.srcATop,             // mezcla el color sobre la imagen
                 ),
                 child: Image.asset(widget.portadaMovil, height: size.height, width: double.infinity, fit: BoxFit.cover,)
@@ -350,7 +350,7 @@ class _Invitation1State extends State<Invitation1> {
                         widget.name,
                         maxLines: 2,
                         textAlign: TextAlign.center,
-                        style: InvStyles.title,
+                        style: InvStyles.title.copyWith(color: AppColors.roseGold),
                       ),
                     ),
                     const SizedBox(height: 30,),
@@ -512,7 +512,7 @@ class _Invitation1State extends State<Invitation1> {
                 Positioned.fill(
                   child: ColorFiltered(
                     colorFilter: ColorFilter.mode(
-                      Colors.black.withOpacity(0.4), // color del overlay
+                      Colors.black.withOpacity(0.5), // color del overlay
                       BlendMode.srcATop,             // mezcla el color sobre la imagen
                     ),
                     child: Image.asset(
@@ -757,7 +757,7 @@ class _Invitation1State extends State<Invitation1> {
                 Positioned.fill(
                   child: ColorFiltered(
                     colorFilter: ColorFilter.mode(
-                      Colors.black.withOpacity(0.4),
+                      Colors.black.withOpacity(0.5),
                       BlendMode.srcATop,
                     ),
                     child: Image.asset(
@@ -773,7 +773,7 @@ class _Invitation1State extends State<Invitation1> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Text("Confirma tu asistencia", style: InvStyles.title, textAlign: TextAlign.center),
+                        Text("Confirma tu asistencia", style: InvStyles.title.copyWith(color: AppColors.roseGold), textAlign: TextAlign.center),
                         Column(
                           children: [
                             Text("¡Quiero compartir este momento tan esperado contigo!",
