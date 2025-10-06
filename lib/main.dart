@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:invitacion_web/core/consts.dart';
+import 'package:invitacion_web/src/envelope_view.dart';
 import 'package:invitacion_web/src/invitation_1.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
@@ -19,11 +20,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "XV – Dora",
       debugShowCheckedModeBanner: false,
-      home: Invitation1(
-        portada: AppAssets.landscape1Cropped,
-        portadaMovil: AppAssets.portrait1,
-        name: "Dora Elena Sánchez De Leija",
-        fecha: DateTime(2025, 11, 8),
+      // home: Invitation1(
+      //   portada: AppAssets.landscape1Cropped,
+      //   portadaMovil: AppAssets.portrait1,
+      //   name: "Dora Elena Sánchez De Leija",
+      //   fecha: DateTime(2025, 11, 8),
+      // ),
+      home: SplashLottieView(
+        asset: "assets/envelope.json",
+        overlayAsset: AppAssets.portrait1,
       ),
     );
   }

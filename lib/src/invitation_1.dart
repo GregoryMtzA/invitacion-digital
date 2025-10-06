@@ -337,7 +337,12 @@ class _Invitation1State extends State<Invitation1> {
                   Colors.black.withOpacity(0.5), // color del overlay
                   BlendMode.srcATop,             // mezcla el color sobre la imagen
                 ),
-                child: Image.asset(widget.portadaMovil, height: size.height, width: double.infinity, fit: BoxFit.cover,)
+                child: Image.asset(
+                  widget.portadaMovil,
+                  height: size.height,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                ),
               ),
               Positioned(
                 bottom: size.height * 0.08,
