@@ -31,6 +31,8 @@ class Invitation1 extends StatefulWidget {
   DateTime fecha;
   String portada;
   String portadaMovil;
+  String family;
+  int available;
 
   Invitation1({
     super.key,
@@ -38,6 +40,8 @@ class Invitation1 extends StatefulWidget {
     required this.portadaMovil,
     required this.name,
     required this.fecha,
+    required this.family,
+    required this.available
   });
 
   @override
@@ -147,7 +151,7 @@ class _Invitation1State extends State<Invitation1> {
                             spacing: 20,
                             children: [
                               Text(
-                                "Dale play a mi canción favorita",
+                                "Dale Play a mi canción favorita",
                                 textAlign: TextAlign.center,
                                 style: InvStylesDesktop.title,
                               ),
@@ -178,7 +182,7 @@ class _Invitation1State extends State<Invitation1> {
                                 spacing: 20,
                                 children: [
                                   Text(
-                                    "Hoy hace quince años mis pares daban gracias a Dios por mí. Hoy doy gracias a Dios por ellos, por cuidarme, tenerme paciencia y aconsejarme. Doy gracias también a toda mi familia por hacer más especial este día. A todos mis amigos por enseñarme el valor de una verdadera amistad. Gracias por acompañarme, que Dios los bendiga.",
+                                    "Hoy hace quince años mis padres daban gracias a Dios por mí. Hoy doy gracias a Dios por ellos, por cuidarme, tenerme paciencia y aconsejarme. Doy gracias también a toda mi familia por hacer más especial este día. A todos mis amigos por enseñarme el valor de una verdadera amistad. Gracias por acompañarme; que Dios los bendiga.",
                                     textAlign: TextAlign.center,
                                     style: InvStylesDesktop.text,
                                   ),
@@ -445,7 +449,7 @@ class _Invitation1State extends State<Invitation1> {
                                 spacing: 20,
                                 children: [
                                   Text(
-                                    "Hoy hace quince años mis pares daban gracias a Dios por mí. Hoy doy gracias a Dios por ellos, por cuidarme, tenerme paciencia y aconsejarme. Doy gracias también a toda mi familia por hacer más especial este día. A todos mis amigos por enseñarme el valor de una verdadera amistad. Gracias por acompañarme, que Dios los bendiga.",
+                                    "Hoy hace quince años mis padres daban gracias a Dios por mí. Hoy doy gracias a Dios por ellos, por cuidarme, tenerme paciencia y aconsejarme. Doy gracias también a toda mi familia por hacer más especial este día. A todos mis amigos por enseñarme el valor de una verdadera amistad. Gracias por acompañarme, que Dios los bendiga.",
                                     textAlign: TextAlign.justify,
                                     style: InvStyles.text,
                                   ),
@@ -600,17 +604,17 @@ class _Invitation1State extends State<Invitation1> {
                               ),
                               const SizedBox(height: 10,),
                               Text(
-                                "A continuación encontrarás el horario y ubicación de los eventos de mi fiesta, asi como un botón directo a Google Maps para que te sea más facil llegar al lugar.",
+                                "A continuación encontrarás el horario y ubicación de los eventos de mi fiesta, así como un botón directo a Google Maps para que te sea más fácil llegar al lugar.",
                                 style: InvStyles.text,
                                 textAlign: TextAlign.center,
                               ),
                               const SizedBox(height: 20,),
-                              Text(
-                                "Itinerario",
-                                style: InvStyles.title,
-                                textAlign: TextAlign.center,
-                              ),
-                              const SizedBox(height: 10,),
+                              // Text(
+                              //   "Itinerario",
+                              //   style: InvStyles.title,
+                              //   textAlign: TextAlign.center,
+                              // ),
+                              // const SizedBox(height: 10,),
                               // Itinerario 1
                               Column(
                                 spacing: 5,
@@ -663,7 +667,71 @@ class _Invitation1State extends State<Invitation1> {
                                     ),
                                   )
                                 ],
-                              )
+                              ),
+                              // Itinerario 3
+                              const SizedBox(height: 20,),
+                              Column(
+                                spacing: 5,
+                                children: [
+                                  Icon(Icons.door_front_door_outlined, color: AppColors.rosaPastel, size: 48,),
+                                  Text(
+                                    "Entrada de la quinceañera",
+                                    style: InvStyles.text,
+                                  ),
+                                  Text(
+                                    "7:00 PM",
+                                    style: InvStyles.text,
+                                  ),
+                                ],
+                              ),
+                              // Itinerario 4
+                              const SizedBox(height: 20,),
+                              Column(
+                                spacing: 5,
+                                children: [
+                                  Icon(Icons.dinner_dining_outlined, color: AppColors.rosaPastel, size: 48,),
+                                  Text(
+                                    "Cena",
+                                    style: InvStyles.text,
+                                  ),
+                                  Text(
+                                    "8:00 PM",
+                                    style: InvStyles.text,
+                                  ),
+                                ],
+                              ),
+                              // Itinerario 5
+                              const SizedBox(height: 20,),
+                              Column(
+                                spacing: 5,
+                                children: [
+                                  Icon(Icons.event_outlined, color: AppColors.rosaPastel, size: 48,),
+                                  Text(
+                                    "Protocolo de quinceañera",
+                                    style: InvStyles.text,
+                                  ),
+                                  Text(
+                                    "8:30 PM",
+                                    style: InvStyles.text,
+                                  ),
+                                ],
+                              ),
+                              // Itinerario 6
+                              const SizedBox(height: 20,),
+                              Column(
+                                spacing: 5,
+                                children: [
+                                  Icon(Icons.nightlight_round_outlined, color: AppColors.rosaPastel, size: 48,),
+                                  Text(
+                                    "Fin",
+                                    style: InvStyles.text,
+                                  ),
+                                  Text(
+                                    "1:00 AM",
+                                    style: InvStyles.text,
+                                  ),
+                                ],
+                              ),
                             ],
                           ),
                         ),
@@ -885,7 +953,7 @@ class _Invitation1State extends State<Invitation1> {
                           ],
                         ),
                         OutlinedButton(
-                          onPressed: openWhatsAppConfirmation,
+                          onPressed: () => openWhatsAppConfirmation(widget.family, widget.available),
                           style: OutlinedButton.styleFrom(
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8),side: BorderSide(color: Colors.white)),
                             padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
