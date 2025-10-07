@@ -159,15 +159,6 @@ class _LinkGeneratorViewState extends State<LinkGeneratorView> {
                       ),
                     ),
                   ),
-                const Spacer(),
-                Opacity(
-                  opacity: .7,
-                  child: Text(
-                    'Tip: puedes enviar ese enlace por WhatsApp.\n'
-                        'La vista en / leerá ?f= y ?n= automáticamente.',
-                    textAlign: TextAlign.center,
-                  ),
-                ),
               ],
             ),
           ),
