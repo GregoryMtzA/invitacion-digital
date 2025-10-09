@@ -19,6 +19,11 @@ class AppAssets {
   static String gift = "$_base/gift.png";
   static String envelope = "$_base/envelope.json";
   static String camera = "$_base/camera.png";
+  static String segundoSobre = "$_base/segundo_sobre.json";
+  static String uno = "$_base/1.png";
+  static String dos = "$_base/2.png";
+  static String tres = "$_base/3.png";
+  static String cuatro = "$_base/4.png";
 
 }
 

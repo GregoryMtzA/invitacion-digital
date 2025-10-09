@@ -446,33 +446,45 @@ class _Invitation1State extends State<Invitation1> {
                               padding: const EdgeInsets.all(32),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
-                                spacing: 20,
+                                spacing: 0,
                                 children: [
                                   Text(
                                     "Con la bendición de Dios te invito a celebrar el inicio de una nueva etapa en mi vida, llena de sueños, metas y grandes logros.",
                                     textAlign: TextAlign.justify,
                                     style: InvStyles.text.copyWith(fontSize: 15),
                                   ),
+                                  const SizedBox(height: 20,),
                                   Text(
                                     "En compañía de mis papás",
                                     textAlign: TextAlign.center,
-                                    style: InvStyles.text,
+                                    style: InvStyles.text.copyWith(fontSize: 15)
                                   ),
                                   RichText(
                                     textAlign: TextAlign.center,
                                     text: TextSpan(
-                                      text: "Luis Gerardo & Mirna Elena",
-                                      style: InvStyles.title.copyWith(fontSize: 20, color: Colors.black, height: 1.6),
+                                      text: "Luis Gerardo ",
+                                        style: InvStyles.title.copyWith(fontSize: 20, color: Colors.black, height: 1.6),
                                       children: [
                                         TextSpan(
-                                          text: "\n y mi hermano\n",
-                                          style: InvStyles.text.copyWith(fontSize: 15)
+                                          text: "&",
+                                            style: GoogleFonts.roboto(fontSize: 15, height: 1.6, fontWeight: FontWeight.normal)
                                         ),
                                         TextSpan(
-                                          text: "Erick Gerardo"
-                                        )
+                                          text: " Mirna Elena",
+                                          style: InvStyles.title.copyWith(fontSize: 20, color: Colors.black, height: 1.6),
+                                        ),
                                       ]
                                     )
+                                  ),
+                                  Text(
+                                    "y mi hermano",
+                                    textAlign: TextAlign.center,
+                                    style: InvStyles.text.copyWith(fontSize: 15, height: 1.6)
+                                  ),
+                                  Text(
+                                    "Erick Gerardo",
+                                    textAlign: TextAlign.center,
+                                    style: InvStyles.title.copyWith(fontSize: 20, color: Colors.black, height: 1.6),
                                   ),
                                   // Text(
                                   //   maxLines: 1,
@@ -750,7 +762,8 @@ class _Invitation1State extends State<Invitation1> {
                                   "7:00 PM",
                                   style: InvStyles.text,
                                 ),
-                                Icon(Icons.door_front_door_outlined, color: AppColors.rosaPastel, size: 48,),
+                                Image.asset(AppAssets.uno, height: 84,)
+                                // Icon(Icons.door_front_door_outlined, color: AppColors.rosaPastel, size: 48,),
                               ],
                             ),
                             // Itinerario 4
@@ -766,7 +779,8 @@ class _Invitation1State extends State<Invitation1> {
                                   "8:00 PM",
                                   style: InvStyles.text,
                                 ),
-                                Icon(Icons.dinner_dining_outlined, color: AppColors.rosaPastel, size: 48,),
+                                Image.asset(AppAssets.dos, height: 84,)
+                                // Icon(Icons.dinner_dining_outlined, color: AppColors.rosaPastel, size: 48,),
                               ],
                             ),
                             // Itinerario 5
@@ -782,7 +796,8 @@ class _Invitation1State extends State<Invitation1> {
                                   "8:30 PM",
                                   style: InvStyles.text,
                                 ),
-                                Icon(Icons.event_outlined, color: AppColors.rosaPastel, size: 48,),
+                                Image.asset(AppAssets.tres, height: 84,)
+                                // Icon(Icons.event_outlined, color: AppColors.rosaPastel, size: 48,),
                               ],
                             ),
                             // Itinerario 6
@@ -798,7 +813,8 @@ class _Invitation1State extends State<Invitation1> {
                                   "1:00 AM",
                                   style: InvStyles.text,
                                 ),
-                                Icon(Icons.nightlight_round_outlined, color: AppColors.rosaPastel, size: 48,),
+                                Image.asset(AppAssets.cuatro, height: 84,)
+                                // Icon(Icons.nightlight_round_outlined, color: AppColors.rosaPastel, size: 48,),
                               ],
                             ),
                           ],
@@ -861,9 +877,9 @@ class _Invitation1State extends State<Invitation1> {
                               style: InvStyles.subtitle,
                               textAlign: TextAlign.center,
                             ),
-                            const SizedBox(height: 40,),
-                            Image.asset(AppAssets.dressCode, height: 120,),
-                            const SizedBox(height: 30,),
+                            const SizedBox(height: 10,),
+                            Image.asset(AppAssets.dressCode, height: 150,),
+                            const SizedBox(height: 20,),
                             Text(
                               "Prohibido el color rosa",
                               style: InvStyles.text.copyWith(color: AppColors.onSurfaceLight),
@@ -918,8 +934,6 @@ class _Invitation1State extends State<Invitation1> {
                         padding: EdgeInsets.all(23),
                         child: Column(
                           children: [
-                            Image.asset(AppAssets.gift, height: 120,),
-                            const SizedBox(height: 10,),
                             Text(
                               "Regalo",
                               style: InvStyles.title,
@@ -927,11 +941,12 @@ class _Invitation1State extends State<Invitation1> {
                             ),
                             const SizedBox(height: 10,),
                             Text(
-                              "Mi mejor regalo en este día tan especial es tu presencia. Pero si quieres tener algún detalle conmigo te comparto una opción",
+                              "Mi mejor regalo en este día tan especial es tu presencia, pero si deseas tener un detalle conmigo, aquí te dejo una opción.",
                               style: InvStyles.text,
                               textAlign: TextAlign.center,
                             ),
-
+                            const SizedBox(height: 10,),
+                            Image.asset(AppAssets.gift, height: 120,),
                           ],
                         ),
                       ),
@@ -990,7 +1005,7 @@ class _Invitation1State extends State<Invitation1> {
                             ),
                             const SizedBox(height: 15,),
                             Text(
-                              "¡Compartelas conmigo y revivamos juntos la magia de mis XV años!",
+                              "¡Envíame las tuyas y revivamos juntos la magia de mis XV años!",
                               style: InvStyles.text,
                               textAlign: TextAlign.center,
                             ),
@@ -1085,9 +1100,9 @@ class _Invitation1State extends State<Invitation1> {
                                   Text("¡Quiero compartir este momento tan esperado contigo!",
                                       style: InvStyles.text.copyWith(color: Colors.white),
                                       textAlign: TextAlign.center),
-                                  Text("Por favor ayúdanos confirmando tu asistencia.",
-                                      style: InvStyles.text.copyWith(color: Colors.white),
-                                      textAlign: TextAlign.center),
+                                  // Text("Por favor ayúdanos confirmando tu asistencia.",
+                                  //     style: InvStyles.text.copyWith(color: Colors.white),
+                                  //     textAlign: TextAlign.center),
                                 ],
                               ),
                               OutlinedButton(
@@ -1146,12 +1161,12 @@ class _Invitation1State extends State<Invitation1> {
                   children: [
                     const SizedBox(height: 40,),
                     Text(
-                      "¡Los mejores momentos de la vida merecen ser compartidos!",
+                      "¡Los mejores momentos se viven con el corazón!",
                       style: InvStyles.text,
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: 20,),
-                    Text("Gracias por acompañarme", style: InvStyles.subtitle.copyWith(fontSize: 25),),
+                    Text("Gracias por acompañarme.", style: InvStyles.subtitle.copyWith(fontSize: 25, fontWeight: FontWeight.bold),),
                     const SizedBox(height: 50,),
                   ],
                 ),

@@ -107,9 +107,9 @@ class _SplashLottieViewState extends State<SplashLottieView> with SingleTickerPr
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: AnimatedSwitcher(
-        duration: Duration(milliseconds: 200),
-        child: _showInvited
-          ? Invitation1(
+          duration: Duration(milliseconds: 200),
+          child: _showInvited
+              ? Invitation1(
             portada: AppAssets.landscape1Cropped,
             portadaMovil: widget.overlayAsset,
             name: "Dora Elena Sánchez De Leija",
@@ -117,115 +117,142 @@ class _SplashLottieViewState extends State<SplashLottieView> with SingleTickerPr
             available: widget.allowed,
             family: widget.family,
           )
-          : GestureDetector(
-          behavior: HitTestBehavior.opaque, // Toca en cualquier parte
-          onTap: _handleTap,
-          child: Container(
-            color: widget.backgroundColor,
-            alignment: Alignment.center,
-            child: Stack(
-              fit: StackFit.expand,
-              children: [
-
-                if (!_showOverlay)
+              : GestureDetector(
+            behavior: HitTestBehavior.opaque, // Toca en cualquier parte
+            onTap: _handleTap,
+            child: Container(
+              color: widget.backgroundColor,
+              alignment: Alignment.center,
+              child: Stack(
+                fit: StackFit.expand,
+                children: [
                   Positioned(
-                      top: size.height * 0.18,
+                    bottom: -35,
+                    left: -25,
+                    child: RotatedBox(
+                        quarterTurns: 3,
+                        child: Image.asset(AppAssets.rosas1, height: 150,)
+                    ),
+                  ),
+                  Positioned(
+                    bottom: -35,
+                    right: -25,
+                    child: RotatedBox(
+                        quarterTurns: 2,
+                        child: Image.asset(AppAssets.rosas1, height: 150,)
+                    ),
+                  ),
+                  Positioned(
+                    top: -35,
+                    left: -25,
+                    child: Image.asset(AppAssets.rosas1, height: 150,),
+                  ),
+                  Positioned(
+                    top: -35,
+                    right: -25,
+                    child: RotatedBox(
+                        quarterTurns: 1,
+                        child: Image.asset(AppAssets.rosas1, height: 150,)
+                    ),
+                  ),
+
+                  if (!_showOverlay)
+                    Positioned(
+                        top: size.height * 0.13,
+                        left: 0,
+                        right: 0,
+                        child: Center(
+                          child: ConstrainedBox(
+                            constraints: const BoxConstraints(maxWidth: 300),
+                            child: Text(
+                              "Dora Elena\nSánchez De Leija",
+                              style: InvStyles.title.copyWith(color: AppColors.roseGold),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        )
+                    ),
+
+                  if (!_showOverlay)
+                    Positioned(
+                      top: size.height * 0.58,
                       left: 0,
                       right: 0,
                       child: Center(
                         child: ConstrainedBox(
                           constraints: const BoxConstraints(maxWidth: 300),
                           child: Text(
-                            "Dora Elena",
-                            style: InvStyles.title.copyWith(color: AppColors.roseGold),
+                            "Haz clic para abrir la invitación",
+                            style: InvStyles.text.copyWith(fontSize: 12),
                             textAlign: TextAlign.center,
                           ),
                         ),
-                      )
+                      ),
+                    ),
+
+                  if (!_showOverlay)
+                    Positioned(
+                      top: size.height * 0.62,
+                      left: 0,
+                      right: 0,
+                      child: Center(
+                        child: ConstrainedBox(
+                          constraints: const BoxConstraints(maxWidth: 300),
+                          child: Text(
+                            widget.family,
+                            style: InvStyles.title.copyWith(color: Color(0xff9d853b)),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                    ),
+
+                  if (!_showOverlay)
+                    Positioned(
+                      top: size.height * 0.70,
+                      left: 0,
+                      right: 0,
+                      child: Center(
+                        child: ConstrainedBox(
+                          constraints: const BoxConstraints(maxWidth: 300),
+                          child: Text(
+                            "Hemos reservado \n ${widget.allowed} lugares en su honor.",
+                            style: InvStyles.text,
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                    ),
+
+                  // Lottie de fondo
+                  Align(
+                    alignment: Alignment.center,
+                    child: _buildLottie(),
                   ),
 
-                if (!_showOverlay)
-                  Positioned(
-                    top: size.height * 0.58,
-                    left: 0,
-                    right: 0,
-                    child: Center(
-                      child: ConstrainedBox(
-                        constraints: const BoxConstraints(maxWidth: 300),
-                        child: Text(
-                          "Haz clic para abrir la invitación",
-                          style: InvStyles.text.copyWith(fontSize: 12),
-                          textAlign: TextAlign.center,
+                  // Overlay con fade-in al completar
+                  AnimatedOpacity(
+                    opacity: _showOverlay ? 1 : 0,
+                    duration: widget.overlayFadeDuration,
+                    curve: Curves.easeOut,
+                    child: IgnorePointer(
+                      ignoring: true, // solo visual
+                      child: Center(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: Image.asset(
+                            widget.overlayAsset,
+                            fit: widget.overlayFit,
+                            height: 600,
+                          ),
                         ),
                       ),
                     ),
                   ),
-
-                // if (!_showOverlay)
-                  // Positioned(
-                  //   top: size.height * 0.62,
-                  //   left: 0,
-                  //   right: 0,
-                  //   child: Center(
-                  //     child: ConstrainedBox(
-                  //       constraints: const BoxConstraints(maxWidth: 300),
-                  //       child: Text(
-                  //         widget.family,
-                  //         style: InvStyles.title.copyWith(color: AppColors.onSurfaceGold),
-                  //         textAlign: TextAlign.center,
-                  //       ),
-                  //     ),
-                  //   ),
-                  // ),
-
-                //* Lugares reservados
-                if (!_showOverlay)
-                  Positioned(
-                    top: size.height * 0.70,
-                    left: 0,
-                    right: 0,
-                    child: Center(
-                      child: ConstrainedBox(
-                        constraints: const BoxConstraints(maxWidth: 300),
-                        child: Text(
-                          "Invitación para: ${widget.family}\n${widget.allowed} lugares reservados",
-                          // "Hemos reservado \n ${widget.allowed} lugares en su honor.",
-                          style: InvStyles.text,
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ),
-                  ),
-
-                // Lottie de fondo
-                Align(
-                  alignment: Alignment.center,
-                  child: _buildLottie(),
-                ),
-
-                // Overlay con fade-in al completar
-                AnimatedOpacity(
-                  opacity: _showOverlay ? 1 : 0,
-                  duration: widget.overlayFadeDuration,
-                  curve: Curves.easeOut,
-                  child: IgnorePointer(
-                    ignoring: true, // solo visual
-                    child: Center(
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: Image.asset(
-                          widget.overlayAsset,
-                          fit: widget.overlayFit,
-                          height: 600,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        )
+          )
       ),
     );
   }

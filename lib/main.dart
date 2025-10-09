@@ -25,7 +25,6 @@ void main() async {
           final qs = state.uri.queryParameters;
           final family  = qs['f'] ?? '';
           final allowed = int.tryParse(qs['n'] ?? '') ?? 0;
-
           return SplashLottieView(
           asset: "assets/envelope.json",
           overlayAsset: AppAssets.portrait1,
