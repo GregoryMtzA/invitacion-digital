@@ -8,6 +8,7 @@ class MobileContainer extends StatelessWidget {
   final Widget child;
   final EdgeInsetsGeometry? padding;
   final Color? color;
+  final double borderRadius;
   final double minWidth;
 
   const MobileContainer({
@@ -15,6 +16,7 @@ class MobileContainer extends StatelessWidget {
     required this.child,
     this.color,
     this.border = true,
+    this.borderRadius = 8,
     this.minWidth = 320,
     this.padding
   });
@@ -27,7 +29,7 @@ class MobileContainer extends StatelessWidget {
         padding: padding,
         decoration: BoxDecoration(
             color: color,
-            borderRadius: border ? BorderRadius.circular(8) : null,
+            borderRadius: BorderRadius.circular(borderRadius),
             border: border ? BoxBorder.all(color: AppColors.neutralLight, width: 3) : null
         ),
         child: child,

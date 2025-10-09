@@ -996,7 +996,7 @@ class _Invitation1State extends State<Invitation1> {
                             ),
                             const SizedBox(height: 25,),
                             InkWell(
-                              onTap: () => launchInNewTab("https://www.google.com/maps?q=Parroquia+Cristo+Rey,+Veracruz+20,+Pedro+Jos%C3%A9+M%C3%A9ndez,+87040+Cdad.+Victoria,+Tamps.&ftid=0x86795309533407fb:0x68d69285cb4ed8aa&entry=gps&lucs=,94284505,94224825,94227247,94227248,94231188,94280568,47071704,47069508,94218641,94282134,94203019,47084304&g_ep=CAISEjI1LjM5LjIuODEwMTI3MDQ4MBgAIIgnKmwsOTQyODQ1MDUsOTQyMjQ4MjUsOTQyMjcyNDcsOTQyMjcyNDgsOTQyMzExODgsOTQyODA1NjgsNDcwNzE3MDQsNDcwNjk1MDgsOTQyMTg2NDEsOTQyODIxMzQsOTQyMDMwMTksNDcwODQzMDRCAk1Y&skid=1f6f49dc-25fd-4f51-8280-7a693fdb88bc&g_st=iw"),
+                              onTap: () => launchInNewTab("https://forms.gle/tLvYojTAj4oBVjyN8"),
                               borderRadius: BorderRadius.circular(8),
                               child: MobileContainer(
                                   border: false,
