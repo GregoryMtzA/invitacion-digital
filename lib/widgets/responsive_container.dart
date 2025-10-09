@@ -7,21 +7,26 @@ class MobileContainer extends StatelessWidget {
   final bool border;
   final Widget child;
   final EdgeInsetsGeometry? padding;
+  final Color? color;
+  final double minWidth;
 
   const MobileContainer({
     super.key,
     required this.child,
+    this.color,
     this.border = true,
+    this.minWidth = 320,
     this.padding
   });
 
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: const BoxConstraints(maxWidth: 320),
+      constraints: BoxConstraints(maxWidth: 320, minWidth: minWidth),
       child: Container(
         padding: padding,
         decoration: BoxDecoration(
+            color: color,
             borderRadius: border ? BorderRadius.circular(8) : null,
             border: border ? BoxBorder.all(color: AppColors.neutralLight, width: 3) : null
         ),

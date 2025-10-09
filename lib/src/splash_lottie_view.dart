@@ -129,14 +129,14 @@ class _SplashLottieViewState extends State<SplashLottieView> with SingleTickerPr
 
                 if (!_showOverlay)
                   Positioned(
-                      top: size.height * 0.13,
+                      top: size.height * 0.18,
                       left: 0,
                       right: 0,
                       child: Center(
                         child: ConstrainedBox(
                           constraints: const BoxConstraints(maxWidth: 300),
                           child: Text(
-                            "Dora Elena Sánchez De Leija",
+                            "Dora Elena",
                             style: InvStyles.title.copyWith(color: AppColors.roseGold),
                             textAlign: TextAlign.center,
                           ),
@@ -161,23 +161,24 @@ class _SplashLottieViewState extends State<SplashLottieView> with SingleTickerPr
                     ),
                   ),
 
-                if (!_showOverlay)
-                  Positioned(
-                    top: size.height * 0.62,
-                    left: 0,
-                    right: 0,
-                    child: Center(
-                      child: ConstrainedBox(
-                        constraints: const BoxConstraints(maxWidth: 300),
-                        child: Text(
-                          widget.family,
-                          style: InvStyles.title.copyWith(color: AppColors.onSurfaceGold),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ),
-                  ),
+                // if (!_showOverlay)
+                  // Positioned(
+                  //   top: size.height * 0.62,
+                  //   left: 0,
+                  //   right: 0,
+                  //   child: Center(
+                  //     child: ConstrainedBox(
+                  //       constraints: const BoxConstraints(maxWidth: 300),
+                  //       child: Text(
+                  //         widget.family,
+                  //         style: InvStyles.title.copyWith(color: AppColors.onSurfaceGold),
+                  //         textAlign: TextAlign.center,
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
 
+                //* Lugares reservados
                 if (!_showOverlay)
                   Positioned(
                     top: size.height * 0.70,
@@ -187,7 +188,8 @@ class _SplashLottieViewState extends State<SplashLottieView> with SingleTickerPr
                       child: ConstrainedBox(
                         constraints: const BoxConstraints(maxWidth: 300),
                         child: Text(
-                          "Hemos reservado \n ${widget.allowed} lugares en su honor.",
+                          "Invitación para: ${widget.family}\n${widget.allowed} lugares reservados",
+                          // "Hemos reservado \n ${widget.allowed} lugares en su honor.",
                           style: InvStyles.text,
                           textAlign: TextAlign.center,
                         ),

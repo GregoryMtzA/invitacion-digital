@@ -18,6 +18,7 @@ class AppAssets {
   static String dressCode = "$_base/dress_code.png";
   static String gift = "$_base/gift.png";
   static String envelope = "$_base/envelope.json";
+  static String camera = "$_base/camera.png";
 
 }
 

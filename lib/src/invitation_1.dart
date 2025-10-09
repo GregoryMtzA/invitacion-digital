@@ -11,7 +11,7 @@ import '../widgets/responsive_container.dart';
 
 class InvStyles {
 
-  static TextStyle title = GoogleFonts.dancingScript(fontSize: 40, color: AppColors.onSurfaceGold, fontWeight: FontWeight.bold);
+  static TextStyle title = GoogleFonts.dancingScript(fontSize: 40, color: AppColors.roseGold, fontWeight: FontWeight.bold);
   static TextStyle subtitle = GoogleFonts.allura(fontSize: 35, color: AppColors.onSurfaceLight,);
   static TextStyle text = GoogleFonts.playfairDisplay(fontSize: 18, color: AppColors.onSurfaceLight);
 
@@ -19,7 +19,7 @@ class InvStyles {
 
 class InvStylesDesktop {
 
-  static TextStyle title = GoogleFonts.dancingScript(fontSize: 70, color: AppColors.onSurfaceGold, fontWeight: FontWeight.bold);
+  static TextStyle title = GoogleFonts.dancingScript(fontSize: 70, color: AppColors.roseGold, fontWeight: FontWeight.bold);
   static TextStyle subtitle = GoogleFonts.allura(fontSize: 60, color: AppColors.onSurfaceLight,);
   static TextStyle text = GoogleFonts.playfairDisplay(fontSize: 30, color: AppColors.onSurfaceLight);
 
@@ -277,7 +277,7 @@ class _Invitation1State extends State<Invitation1> {
                   children: [
                     //* Nombre
                     Text(
-                      widget.name,
+                      "Dora Elena\nSánchez De Leija",
                       style: InvStyles.title,
                     ),
                     const SizedBox(height: 50,),
@@ -360,7 +360,7 @@ class _Invitation1State extends State<Invitation1> {
                       width: 320,
                       padding: EdgeInsets.symmetric(vertical: 2, horizontal: 10),
                       child: Text(
-                        widget.name,
+                        "Dora Elena\nSánchez De Leija",
                         maxLines: 2,
                         textAlign: TextAlign.center,
                         style: InvStyles.title.copyWith(color: AppColors.roseGold),
@@ -377,7 +377,7 @@ class _Invitation1State extends State<Invitation1> {
                           color: Colors.white,
                         ),
                         Text(
-                          "MIS XV",
+                          "MIS XV AÑOS",
                           style: GoogleFonts.playfairDisplay(
                               fontSize: 25,
                               color: Colors.white,
@@ -393,7 +393,7 @@ class _Invitation1State extends State<Invitation1> {
                     ),
                     const SizedBox(height: 10,),
                     Text(
-                      DateFormat("dd 'de' MMMM 'del' yyyy", "es_ES").format(widget.fecha),
+                      DateFormat("dd 'de' MMMM 'de' yyyy", "es_ES").format(widget.fecha),
                       style: GoogleFonts.playfairDisplay(
                         fontSize: 15,
                         color: Colors.white,
@@ -449,37 +449,37 @@ class _Invitation1State extends State<Invitation1> {
                                 spacing: 20,
                                 children: [
                                   Text(
-                                    "Hoy hace quince años mis padres daban gracias a Dios por mí. Hoy doy gracias a Dios por ellos, por cuidarme, tenerme paciencia y aconsejarme. Doy gracias también a toda mi familia por hacer más especial este día. A todos mis amigos por enseñarme el valor de una verdadera amistad. Gracias por acompañarme, que Dios los bendiga.",
+                                    "Con la bendición de Dios te invito a celebrar el inicio de una nueva etapa en mi vida, llena de sueños, metas y grandes logros.",
                                     textAlign: TextAlign.justify,
-                                    style: InvStyles.text,
+                                    style: InvStyles.text.copyWith(fontSize: 15),
                                   ),
                                   Text(
-                                    "Mis padres",
+                                    "En compañía de mis papás",
                                     textAlign: TextAlign.center,
-                                    style: InvStyles.text
+                                    style: InvStyles.text,
                                   ),
                                   RichText(
                                     textAlign: TextAlign.center,
                                     text: TextSpan(
-                                      text: "Luis Gerardo Sánchez",
-                                      style: InvStyles.title.copyWith(fontSize: 20, color: Colors.black),
+                                      text: "Luis Gerardo & Mirna Elena",
+                                      style: InvStyles.title.copyWith(fontSize: 20, color: Colors.black, height: 1.6),
                                       children: [
                                         TextSpan(
-                                          text: "\n y \n",
-                                          style: InvStyles.text
+                                          text: "\n y mi hermano\n",
+                                          style: InvStyles.text.copyWith(fontSize: 15)
                                         ),
                                         TextSpan(
-                                          text: "Mirna Elena De Leija Cruz"
+                                          text: "Erick Gerardo"
                                         )
                                       ]
                                     )
                                   ),
-                                  Text(
-                                    maxLines: 1,
-                                    "¡Te esperamos en mi fiesta!",
-                                    textAlign: TextAlign.center,
-                                    style: GoogleFonts.playfairDisplay(fontSize: 18),
-                                  ),
+                                  // Text(
+                                  //   maxLines: 1,
+                                  //   "¡Te esperamos en mi fiesta!",
+                                  //   textAlign: TextAlign.center,
+                                  //   style: GoogleFonts.playfairDisplay(fontSize: 18),
+                                  // ),
                                 ],
                               ),
                             ),
@@ -595,144 +595,81 @@ class _Invitation1State extends State<Invitation1> {
                       children: [
                         Padding(
                           padding: EdgeInsets.all(20),
-                          child: Column(
-                            children: [
-                              Text(
-                                "¿Cuando y donde?",
-                                style: InvStyles.title,
-                                textAlign: TextAlign.center,
-                              ),
-                              const SizedBox(height: 10,),
-                              Text(
-                                "A continuación encontrarás el horario y ubicación de los eventos de mi fiesta, así como un botón directo a Google Maps para que te sea más fácil llegar al lugar.",
-                                style: InvStyles.text,
-                                textAlign: TextAlign.center,
-                              ),
-                              const SizedBox(height: 20,),
-                              // Text(
-                              //   "Itinerario",
-                              //   style: InvStyles.title,
-                              //   textAlign: TextAlign.center,
-                              // ),
-                              // const SizedBox(height: 10,),
-                              // Itinerario 1
-                              Column(
-                                spacing: 5,
-                                children: [
-                                  Icon(Icons.church_outlined, color: AppColors.rosaPastel, size: 48,),
-                                  Text(
-                                    "Misa",
-                                    style: InvStyles.text,
-                                  ),
-                                  Text(
-                                    "5:00 PM",
-                                    style: InvStyles.text,
-                                  ),
-                                  InkWell(
-                                    onTap: () => launchInNewTab("https://www.google.com/maps?q=Parroquia+Cristo+Rey,+Veracruz+20,+Pedro+Jos%C3%A9+M%C3%A9ndez,+87040+Cdad.+Victoria,+Tamps.&ftid=0x86795309533407fb:0x68d69285cb4ed8aa&entry=gps&lucs=,94284505,94224825,94227247,94227248,94231188,94280568,47071704,47069508,94218641,94282134,94203019,47084304&g_ep=CAISEjI1LjM5LjIuODEwMTI3MDQ4MBgAIIgnKmwsOTQyODQ1MDUsOTQyMjQ4MjUsOTQyMjcyNDcsOTQyMjcyNDgsOTQyMzExODgsOTQyODA1NjgsNDcwNzE3MDQsNDcwNjk1MDgsOTQyMTg2NDEsOTQyODIxMzQsOTQyMDMwMTksNDcwODQzMDRCAk1Y&skid=1f6f49dc-25fd-4f51-8280-7a693fdb88bc&g_st=iw"),
-                                    borderRadius: BorderRadius.circular(8),
-                                    child: MobileContainer(
-                                        padding: EdgeInsets.all(10),
-                                        child: Text(
-                                          "Ver ubicación",
-                                          style: InvStyles.text.copyWith(color: AppColors.roseGold),
-                                        )
+                          child: Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "Dónde y horario",
+                                  style: InvStyles.title,
+                                  textAlign: TextAlign.center,
+                                ),
+                                const SizedBox(height: 10,),
+                                Column(
+                                  spacing: 15,
+                                  children: [
+                                    Text(
+                                      "Ceremonia Religiosa",
+                                      style: InvStyles.text,
                                     ),
-                                  )
-                                ],
-                              ),
-                              const SizedBox(height: 20,),
-                              // Itinerario 2
-                              Column(
-                                spacing: 5,
-                                children: [
-                                  Icon(Icons.villa_outlined, color: AppColors.rosaPastel, size: 48,),
-                                  Text(
-                                    "Recepción",
-                                    style: InvStyles.text,
-                                  ),
-                                  Text(
-                                    "6:30 PM",
-                                    style: InvStyles.text,
-                                  ),
-                                  InkWell(
-                                    onTap: () => launchInNewTab("https://www.google.com/maps?q=Stoa+Sal%C3%B3n+de+Eventos+Sociales,+Laurel+226,+Col+del+Maestro,+87070+Cdad.+Victoria,+Tamps.&ftid=0x85d7f9e718fe6f49:0x6c81f2a2d66c795&entry=gps&lucs=,94284505,94224825,94227247,94227248,94231188,94280568,47071704,47069508,94218641,94282134,94203019,47084304&g_ep=CAISEjI1LjM5LjIuODEwMTI3MDQ4MBgAIIgnKmwsOTQyODQ1MDUsOTQyMjQ4MjUsOTQyMjcyNDcsOTQyMjcyNDgsOTQyMzExODgsOTQyODA1NjgsNDcwNzE3MDQsNDcwNjk1MDgsOTQyMTg2NDEsOTQyODIxMzQsOTQyMDMwMTksNDcwODQzMDRCAk1Y&skid=975c594c-fa53-4f7b-91da-d852a6b6e480&g_st=iw"),
-                                    borderRadius: BorderRadius.circular(8),
-                                    child: MobileContainer(
-                                        padding: EdgeInsets.all(10),
-                                        child: Text(
-                                          "Ver ubicación",
-                                          style: InvStyles.text.copyWith(color: AppColors.roseGold),
-                                        )
+                                    Text(
+                                      "Parroquia Cristo Rey",
+                                      style: InvStyles.text.copyWith(fontSize: 22, fontWeight: FontWeight.bold),
                                     ),
-                                  )
-                                ],
-                              ),
-                              // Itinerario 3
-                              const SizedBox(height: 20,),
-                              Column(
-                                spacing: 5,
-                                children: [
-                                  Icon(Icons.door_front_door_outlined, color: AppColors.rosaPastel, size: 48,),
-                                  Text(
-                                    "Entrada de la quinceañera",
-                                    style: InvStyles.text,
-                                  ),
-                                  Text(
-                                    "7:00 PM",
-                                    style: InvStyles.text,
-                                  ),
-                                ],
-                              ),
-                              // Itinerario 4
-                              const SizedBox(height: 20,),
-                              Column(
-                                spacing: 5,
-                                children: [
-                                  Icon(Icons.dinner_dining_outlined, color: AppColors.rosaPastel, size: 48,),
-                                  Text(
-                                    "Cena",
-                                    style: InvStyles.text,
-                                  ),
-                                  Text(
-                                    "8:00 PM",
-                                    style: InvStyles.text,
-                                  ),
-                                ],
-                              ),
-                              // Itinerario 5
-                              const SizedBox(height: 20,),
-                              Column(
-                                spacing: 5,
-                                children: [
-                                  Icon(Icons.event_outlined, color: AppColors.rosaPastel, size: 48,),
-                                  Text(
-                                    "Protocolo de quinceañera",
-                                    style: InvStyles.text,
-                                  ),
-                                  Text(
-                                    "8:30 PM",
-                                    style: InvStyles.text,
-                                  ),
-                                ],
-                              ),
-                              // Itinerario 6
-                              const SizedBox(height: 20,),
-                              Column(
-                                spacing: 5,
-                                children: [
-                                  Icon(Icons.nightlight_round_outlined, color: AppColors.rosaPastel, size: 48,),
-                                  Text(
-                                    "Fin",
-                                    style: InvStyles.text,
-                                  ),
-                                  Text(
-                                    "1:00 AM",
-                                    style: InvStyles.text,
-                                  ),
-                                ],
-                              ),
-                            ],
+                                    Text(
+                                      "5:00 PM",
+                                      style: InvStyles.text,
+                                    ),
+                                    InkWell(
+                                      onTap: () => launchInNewTab("https://www.google.com/maps?q=Parroquia+Cristo+Rey,+Veracruz+20,+Pedro+Jos%C3%A9+M%C3%A9ndez,+87040+Cdad.+Victoria,+Tamps.&ftid=0x86795309533407fb:0x68d69285cb4ed8aa&entry=gps&lucs=,94284505,94224825,94227247,94227248,94231188,94280568,47071704,47069508,94218641,94282134,94203019,47084304&g_ep=CAISEjI1LjM5LjIuODEwMTI3MDQ4MBgAIIgnKmwsOTQyODQ1MDUsOTQyMjQ4MjUsOTQyMjcyNDcsOTQyMjcyNDgsOTQyMzExODgsOTQyODA1NjgsNDcwNzE3MDQsNDcwNjk1MDgsOTQyMTg2NDEsOTQyODIxMzQsOTQyMDMwMTksNDcwODQzMDRCAk1Y&skid=1f6f49dc-25fd-4f51-8280-7a693fdb88bc&g_st=iw"),
+                                      borderRadius: BorderRadius.circular(8),
+                                      child: MobileContainer(
+                                          minWidth: 150,
+                                          padding: EdgeInsets.all(10),
+                                          child: Text(
+                                            "Ver ubicación",
+                                            style: InvStyles.text.copyWith(color: AppColors.roseGold),
+                                            textAlign: TextAlign.center,
+                                          )
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                const SizedBox(height: 50,),
+                                Column(
+                                  spacing: 15,
+                                  children: [
+                                    // Icon(Icons.door_front_door_outlined, color: AppColors.rosaPastel, size: 48,),
+                                    Text(
+                                      "Recepción",
+                                      style: InvStyles.text,
+                                    ),
+                                    Text(
+                                      "STOA VIP\nEventos Sociales",
+                                      style: InvStyles.text.copyWith(fontSize: 22, fontWeight: FontWeight.bold),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                    Text(
+                                      "6:30 PM",
+                                      style: InvStyles.text,
+                                    ),
+                                    InkWell(
+                                      onTap: () => launchInNewTab("https://www.google.com/maps?q=Stoa+Sal%C3%B3n+de+Eventos+Sociales,+Laurel+226,+Col+del+Maestro,+87070+Cdad.+Victoria,+Tamps.&ftid=0x85d7f9e718fe6f49:0x6c81f2a2d66c795&entry=gps&lucs=,94284505,94224825,94227247,94227248,94231188,94280568,47071704,47069508,94218641,94282134,94203019,47084304&g_ep=CAISEjI1LjM5LjIuODEwMTI3MDQ4MBgAIIgnKmwsOTQyODQ1MDUsOTQyMjQ4MjUsOTQyMjcyNDcsOTQyMjcyNDgsOTQyMzExODgsOTQyODA1NjgsNDcwNzE3MDQsNDcwNjk1MDgsOTQyMTg2NDEsOTQyODIxMzQsOTQyMDMwMTksNDcwODQzMDRCAk1Y&skid=975c594c-fa53-4f7b-91da-d852a6b6e480&g_st=iw"),
+                                      borderRadius: BorderRadius.circular(8),
+                                      child: MobileContainer(
+                                          minWidth: 150,
+                                          padding: EdgeInsets.all(10),
+                                          child: Text(
+                                            "Ver ubicación",
+                                            style: InvStyles.text.copyWith(color: AppColors.roseGold),
+                                            textAlign: TextAlign.center,
+                                          )
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                         Positioned(
@@ -785,6 +722,123 @@ class _Invitation1State extends State<Invitation1> {
               ),
             ],
           ),
+          //! Detalles de la celebración
+          Column(
+            children: [
+              const SizedBox(height: 20,),
+              MobileContainer(
+                  child: Stack(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.all(20),
+                        child: Column(
+                          children: [
+                            Text(
+                              "Detalles de la celebración",
+                              style: InvStyles.title,
+                              textAlign: TextAlign.center,
+                            ),
+                            const SizedBox(height: 10,),
+                            Column(
+                              spacing: 5,
+                              children: [
+                                Text(
+                                  "Presentación",
+                                  style: InvStyles.text,
+                                ),
+                                Text(
+                                  "7:00 PM",
+                                  style: InvStyles.text,
+                                ),
+                                Icon(Icons.door_front_door_outlined, color: AppColors.rosaPastel, size: 48,),
+                              ],
+                            ),
+                            // Itinerario 4
+                            const SizedBox(height: 20,),
+                            Column(
+                              spacing: 5,
+                              children: [
+                                Text(
+                                  "Cena",
+                                  style: InvStyles.text,
+                                ),
+                                Text(
+                                  "8:00 PM",
+                                  style: InvStyles.text,
+                                ),
+                                Icon(Icons.dinner_dining_outlined, color: AppColors.rosaPastel, size: 48,),
+                              ],
+                            ),
+                            // Itinerario 5
+                            const SizedBox(height: 20,),
+                            Column(
+                              spacing: 5,
+                              children: [
+                                Text(
+                                  "Protocolo de quinceañera",
+                                  style: InvStyles.text,
+                                ),
+                                Text(
+                                  "8:30 PM",
+                                  style: InvStyles.text,
+                                ),
+                                Icon(Icons.event_outlined, color: AppColors.rosaPastel, size: 48,),
+                              ],
+                            ),
+                            // Itinerario 6
+                            const SizedBox(height: 20,),
+                            Column(
+                              spacing: 5,
+                              children: [
+                                Text(
+                                  "Fin",
+                                  style: InvStyles.text,
+                                ),
+                                Text(
+                                  "1:00 AM",
+                                  style: InvStyles.text,
+                                ),
+                                Icon(Icons.nightlight_round_outlined, color: AppColors.rosaPastel, size: 48,),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      Positioned(
+                        top: 0,
+                        left: 0,
+                        child: Image.asset(AppAssets.vintageCornerBorder, height: 80,),
+                      ),
+                      Positioned(
+                        bottom: 0,
+                        left: 0,
+                        child: RotatedBox(
+                          quarterTurns: 3,
+                          child: Image.asset(AppAssets.vintageCornerBorder, height: 80,),
+                        ),
+                      ),
+                      Positioned(
+                        top: 0,
+                        right: 0,
+                        child: RotatedBox(
+                          quarterTurns: 1,
+                          child: Image.asset(AppAssets.vintageCornerBorder, height: 80,),
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 0,
+                        right: 0,
+                        child: RotatedBox(
+                          quarterTurns: 2,
+                          child: Image.asset(AppAssets.vintageCornerBorder, height: 80,),
+                        ),
+                      ),
+                    ],
+                  )
+              ),
+              const SizedBox(height: 20,),
+            ],
+          ),
           //! Código de Vestimenta
           Column(
             children: [
@@ -804,12 +858,12 @@ class _Invitation1State extends State<Invitation1> {
                             const SizedBox(height: 10,),
                             Text(
                               "Formal",
-                              style: InvStyles.text,
+                              style: InvStyles.subtitle,
                               textAlign: TextAlign.center,
                             ),
-                            const SizedBox(height: 20,),
+                            const SizedBox(height: 40,),
                             Image.asset(AppAssets.dressCode, height: 120,),
-                            const SizedBox(height: 10,),
+                            const SizedBox(height: 30,),
                             Text(
                               "Prohibido el color rosa",
                               style: InvStyles.text.copyWith(color: AppColors.onSurfaceLight),
@@ -861,7 +915,7 @@ class _Invitation1State extends State<Invitation1> {
                   child: Stack(
                     children: [
                       Padding(
-                        padding: EdgeInsets.all(20),
+                        padding: EdgeInsets.all(23),
                         child: Column(
                           children: [
                             Image.asset(AppAssets.gift, height: 120,),
@@ -873,11 +927,89 @@ class _Invitation1State extends State<Invitation1> {
                             ),
                             const SizedBox(height: 10,),
                             Text(
-                              "Mi mejor regalo en este día tan especial es tu presencia. Pero si deseas obsequiarme algo, podrás colocarlo en un sobre; habrá un cofre disponible en el salón.",
+                              "Mi mejor regalo en este día tan especial es tu presencia. Pero si quieres tener algún detalle conmigo te comparto una opción",
                               style: InvStyles.text,
                               textAlign: TextAlign.center,
                             ),
 
+                          ],
+                        ),
+                      ),
+                      Positioned(
+                        top: 0,
+                        left: 0,
+                        child: Image.asset(AppAssets.vintageCornerBorder, height: 80,),
+                      ),
+                      Positioned(
+                        bottom: 0,
+                        left: 0,
+                        child: RotatedBox(
+                          quarterTurns: 3,
+                          child: Image.asset(AppAssets.vintageCornerBorder, height: 80,),
+                        ),
+                      ),
+                      Positioned(
+                        top: 0,
+                        right: 0,
+                        child: RotatedBox(
+                          quarterTurns: 1,
+                          child: Image.asset(AppAssets.vintageCornerBorder, height: 80,),
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 0,
+                        right: 0,
+                        child: RotatedBox(
+                          quarterTurns: 2,
+                          child: Image.asset(AppAssets.vintageCornerBorder, height: 80,),
+                        ),
+                      ),
+                    ],
+                  )
+              ),
+              const SizedBox(height: 40,),
+            ],
+          ),
+          //! Fotos
+          Column(
+            children: [
+              const SizedBox(height: 20,),
+              MobileContainer(
+                  child: Stack(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.all(20),
+                        child: Column(
+                          children: [
+                            Image.asset(AppAssets.camera, height: 120,),
+                            const SizedBox(height: 10,),
+                            Text(
+                              "Cada foto es un recuerdo que quiero guardar para siempre.",
+                              style: InvStyles.text,
+                              textAlign: TextAlign.center,
+                            ),
+                            const SizedBox(height: 15,),
+                            Text(
+                              "¡Compartelas conmigo y revivamos juntos la magia de mis XV años!",
+                              style: InvStyles.text,
+                              textAlign: TextAlign.center,
+                            ),
+                            const SizedBox(height: 25,),
+                            InkWell(
+                              onTap: () => launchInNewTab("https://www.google.com/maps?q=Parroquia+Cristo+Rey,+Veracruz+20,+Pedro+Jos%C3%A9+M%C3%A9ndez,+87040+Cdad.+Victoria,+Tamps.&ftid=0x86795309533407fb:0x68d69285cb4ed8aa&entry=gps&lucs=,94284505,94224825,94227247,94227248,94231188,94280568,47071704,47069508,94218641,94282134,94203019,47084304&g_ep=CAISEjI1LjM5LjIuODEwMTI3MDQ4MBgAIIgnKmwsOTQyODQ1MDUsOTQyMjQ4MjUsOTQyMjcyNDcsOTQyMjcyNDgsOTQyMzExODgsOTQyODA1NjgsNDcwNzE3MDQsNDcwNjk1MDgsOTQyMTg2NDEsOTQyODIxMzQsOTQyMDMwMTksNDcwODQzMDRCAk1Y&skid=1f6f49dc-25fd-4f51-8280-7a693fdb88bc&g_st=iw"),
+                              borderRadius: BorderRadius.circular(8),
+                              child: MobileContainer(
+                                  border: false,
+                                  minWidth: 150,
+                                  padding: EdgeInsets.all(10),
+                                  color: AppColors.rosaPastel,
+                                  child: Text(
+                                    "Subir fotos",
+                                    style: InvStyles.text.copyWith(),
+                                    textAlign: TextAlign.center,
+                                  )
+                              ),
+                            )
                           ],
                         ),
                       ),
@@ -939,28 +1071,37 @@ class _Invitation1State extends State<Invitation1> {
                   border: false,
                   child: Center(
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Text("Confirma tu asistencia", style: InvStyles.title.copyWith(color: AppColors.roseGold), textAlign: TextAlign.center),
-                        Column(
-                          children: [
-                            Text("¡Quiero compartir este momento tan esperado contigo!",
-                                style: InvStyles.text.copyWith(color: Colors.white),
-                                textAlign: TextAlign.center),
-                            Text("Por favor ayúdanos confirmando tu asistencia.",
-                                style: InvStyles.text.copyWith(color: Colors.white),
-                                textAlign: TextAlign.center),
-                          ],
-                        ),
-                        OutlinedButton(
-                          onPressed: () => openWhatsAppConfirmation(widget.family, widget.available),
-                          style: OutlinedButton.styleFrom(
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8),side: BorderSide(color: Colors.white)),
-                            padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-                            foregroundColor: AppColors.rosaPastel
+                        Expanded(flex: 1, child: SizedBox.shrink()),
+                        Expanded(
+                          flex: 2,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            spacing: 20,
+                            children: [
+                              Text("Confirma tu asistencia", style: InvStyles.title.copyWith(color: AppColors.roseGold), textAlign: TextAlign.center),
+                              Column(
+                                children: [
+                                  Text("¡Quiero compartir este momento tan esperado contigo!",
+                                      style: InvStyles.text.copyWith(color: Colors.white),
+                                      textAlign: TextAlign.center),
+                                  Text("Por favor ayúdanos confirmando tu asistencia.",
+                                      style: InvStyles.text.copyWith(color: Colors.white),
+                                      textAlign: TextAlign.center),
+                                ],
+                              ),
+                              OutlinedButton(
+                                  onPressed: () => openWhatsAppConfirmation(widget.family, widget.available),
+                                  style: OutlinedButton.styleFrom(
+                                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8),side: BorderSide(color: Colors.white)),
+                                      padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                                      foregroundColor: AppColors.rosaPastel
+                                  ),
+                                  child: Text("Confirmar")
+                              ),
+                            ],
                           ),
-                          child: Text("Confirmar")
-                        ),
+                        )
                       ],
                     ),
                   ),
