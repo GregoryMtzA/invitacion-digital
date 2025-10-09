@@ -477,21 +477,27 @@ class _Invitation1State extends State<Invitation1> {
                                     )
                                   ),
                                   Text(
-                                    "y mi hermano",
+                                    "y mis hermanos",
                                     textAlign: TextAlign.center,
                                     style: InvStyles.text.copyWith(fontSize: 15, height: 1.6)
                                   ),
-                                  Text(
-                                    "Erick Gerardo",
-                                    textAlign: TextAlign.center,
-                                    style: InvStyles.title.copyWith(fontSize: 20, color: Colors.black, height: 1.6),
+                                  RichText(
+                                      textAlign: TextAlign.center,
+                                      text: TextSpan(
+                                          text: "Alejandra ",
+                                          style: InvStyles.title.copyWith(fontSize: 20, color: Colors.black, height: 1.6),
+                                          children: [
+                                            TextSpan(
+                                                text: "&",
+                                                style: GoogleFonts.roboto(fontSize: 15, height: 1.6, fontWeight: FontWeight.normal)
+                                            ),
+                                            TextSpan(
+                                              text: " Erick Gerardo",
+                                              style: InvStyles.title.copyWith(fontSize: 20, color: Colors.black, height: 1.6),
+                                            ),
+                                          ]
+                                      )
                                   ),
-                                  // Text(
-                                  //   maxLines: 1,
-                                  //   "¡Te esperamos en mi fiesta!",
-                                  //   textAlign: TextAlign.center,
-                                  //   style: GoogleFonts.playfairDisplay(fontSize: 18),
-                                  // ),
                                 ],
                               ),
                             ),
@@ -612,7 +618,7 @@ class _Invitation1State extends State<Invitation1> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  "Dónde y horario",
+                                  "Lugar y hora",
                                   style: InvStyles.title,
                                   textAlign: TextAlign.center,
                                 ),

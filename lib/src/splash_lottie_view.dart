@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -198,27 +199,23 @@ class _SplashLottieViewState extends State<SplashLottieView> with SingleTickerPr
                       child: Center(
                         child: ConstrainedBox(
                           constraints: const BoxConstraints(maxWidth: 300),
-                          child: Text(
-                            widget.family,
-                            style: InvStyles.title.copyWith(color: Color(0xff9d853b)),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ),
-                    ),
-
-                  if (!_showOverlay)
-                    Positioned(
-                      top: size.height * 0.70,
-                      left: 0,
-                      right: 0,
-                      child: Center(
-                        child: ConstrainedBox(
-                          constraints: const BoxConstraints(maxWidth: 300),
-                          child: Text(
-                            "Hemos reservado \n ${widget.allowed} lugares en su honor.",
-                            style: InvStyles.text,
-                            textAlign: TextAlign.center,
+                          child: Column(
+                            spacing: 10,
+                            children: [
+                              AutoSizeText(
+                                widget.family,
+                                maxLines: 1,
+                                minFontSize: 20,
+                                maxFontSize: 40,
+                                style: InvStyles.title.copyWith(color: Color(0xff9d853b)),
+                                textAlign: TextAlign.center,
+                              ),
+                              Text(
+                                "Hemos reservado \n ${widget.allowed} lugares en su honor.",
+                                style: InvStyles.text,
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
                           ),
                         ),
                       ),
