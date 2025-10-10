@@ -1017,7 +1017,7 @@ class _Invitation1State extends State<Invitation1> {
                             ),
                             const SizedBox(height: 25,),
                             InkWell(
-                              onTap: () => launchInNewTab("https://forms.gle/tLvYojTAj4oBVjyN8"),
+                              onTap: () => launchInNewTab("https://docs.google.com/forms/d/e/1FAIpQLSdZeiBTSdNNk5bf3KD0BpHxfiuHAlyNbhQoGTKSGXo9Qo9Fvg/viewform"),
                               borderRadius: BorderRadius.circular(8),
                               child: MobileContainer(
                                   border: false,
@@ -1112,7 +1112,7 @@ class _Invitation1State extends State<Invitation1> {
                                 ],
                               ),
                               OutlinedButton(
-                                  onPressed: () => openWhatsAppConfirmation(widget.family, widget.available),
+                                  onPressed: () => launchInNewTab("https://docs.google.com/forms/d/e/1FAIpQLSfp_5Th95Vl7tQXpz2nOsq8E6TzOWdQjsRkxIvV_2sjvRy5tg/viewform"),
                                   style: OutlinedButton.styleFrom(
                                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8),side: BorderSide(color: Colors.white)),
                                       padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
