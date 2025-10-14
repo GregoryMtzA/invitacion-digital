@@ -635,7 +635,7 @@ class _Invitation1State extends State<Invitation1> {
                                       style: InvStyles.text.copyWith(fontSize: 22, fontWeight: FontWeight.bold),
                                     ),
                                     Text(
-                                      "5:00 PM",
+                                      "4:30 PM",
                                       style: InvStyles.text,
                                     ),
                                     InkWell(
